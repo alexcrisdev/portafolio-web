@@ -1,42 +1,47 @@
-html, body{
-    margin: 0;
-    height: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
+/* --- Variables CSS (Custom Properties) --- */
+:root {
+    --primary-color: rgb(26, 27, 29); /* Color principal: negro casi puro del sidebar */
+    --accent-color: #007bff; /* Color de acento: azul para botones/interacciones */
+    --text-dark: #333; /* Color de texto oscuro */
+    --text-medium: #555; /* Color de texto medio */
+    --text-light: #666; /* Color de texto claro */
+    --bg-light: #f8f8f8; /* Fondo claro para secciones alternas */
+    --bg-white: #ffffff; /* Fondo blanco */
+    --border-light: rgba(255, 255, 255, 0.1); /* Borde sutil para sidebar */
+    --shadow-light: rgba(0, 0, 0, 0.1); /* Sombra suave */
+    --shadow-medium: rgba(0, 0, 0, 0.2); /* Sombra media */
+    --sidebar-width: 300px;
+    --sidebar-min-width: 250px;
 }
 
-html{
+/* --- Global Resets y Estilos Base --- */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-dark); /* Usando variable */
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+html {
     scroll-behavior: smooth;
 }
 
-.sidebar {
-    opacity: 0;
-    transform: translateX(-20px);
-    animation: fadeInSidebar 1s ease-in-out forwards;
-    animation-delay: 2s;
-}
-
-@keyframes fadeInSidebar {
-    to{
-        opacity: 1;
-        transform: translateX(0);
-    }
-    
-}
-
-.container{
+/* --- Contenedor Principal (Flexbox) --- */
+.container {
     display: flex;
-    height: 100vh;
 }
 
-.sidebar li a{
-    color: white;
-}
-
+/* --- Sidebar (Barra Lateral) --- */
 .sidebar {
-    width: 30%;
+    width: var(--sidebar-width); /* Usando variable */
+    min-width: var(--sidebar-min-width); /* Usando variable */
     height: 100vh;
-    background-color: rgb(26, 27, 29);
+    background-color: var(--primary-color); /* Usando variable */
     color: white;
     clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
     position: fixed;
@@ -44,36 +49,442 @@ html{
     flex-direction: column;
     justify-content: center;
     padding: 0;
+
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInSidebar 1s ease-in-out forwards;
+    animation-delay: 0.5s;
 }
 
-.sidebar ul{
-    border: 20px;
+@keyframes fadeInSidebar {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* --- Navegación del Sidebar (Lista) --- */
+.sidebar ul {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     height: 100%;
-    padding: 0 0 0 10px;
+    padding: 0;
     margin: 0;
     list-style: none;
 }
 
-.sidebar li{
+.sidebar li {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    height: 100%;
-    padding-left: 20px;
-    border-bottom: 1px solid white;
+    padding: 15px 30px;
+    border-bottom: 1px solid var(--border-light); /* Usando variable */
     box-sizing: border-box;
-}
-
-.sidebar ul li{
-    padding: 10px 20px;
     transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
 }
 
-.sidebar ul li:hover{
+.sidebar li:last-child {
+    border-bottom: none;
+}
+
+.sidebar li:hover {
     transform: translateX(10px);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--border-light); /* Usando variable */
+}
+
+/* --- Estilo de los Enlaces en el Sidebar --- */
+.sidebar li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px; /* Ligeramente más pequeño para acomodar iconos */
+    font-weight: 600;
+    display: flex; /* Para alinear icono y texto */
+    align-items: center; /* Centra verticalmente icono y texto */
+    gap: 15px; /* Espacio entre icono y texto */
+    width: 100%;
+}
+
+.sidebar li a .fas, .sidebar li a .fab {
+    font-size: 28px; /* Tamaño del icono */
+    color: white; /* Color del icono */
+    transition: transform 0.3s ease;
+}
+
+.sidebar li:hover a .fas, .sidebar li:hover a .fab {
+    transform: scale(1.1); /* Pequeña animación en el icono al pasar el ratón */
+}
+
+/* --- Contenido Principal --- */
+.main-content {
+    flex-grow: 1;
+    margin-left: var(--sidebar-width); /* Usando variable */
+}
+
+/* --- Estilos Comunes para Secciones de Página --- */
+.page-section, .hero-section {
+    min-height: 100vh;
+    padding: 60px 40px; /* Padding para el contenido de la sección */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    scroll-margin-top: 0; /* Asegura que la sección no quede "cortada" por elementos fijos al hacer scroll */
+}
+
+.section-content {
+    max-width: 900px; /* Ancho máximo para el contenido de las secciones */
+    width: 100%; /* Ocupa todo el ancho disponible hasta max-width */
+    padding: 20px; /* Padding interno dentro del section-content */
+    box-sizing: border-box;
+}
+
+/* --- Sección de Inicio (Hero Section) --- */
+/* Ya está incluida en .page-section, pero puedes añadir estilos específicos aquí */
+.hero-section {
+    background-color: var(--bg-white);
+}
+
+.hero-content { /* Contenedor específico para el contenido de la hero-section */
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra el contenido si hay espacio extra */
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 25px;
+    border: 5px solid var(--border-light);
+    box-shadow: 0 4px 15px var(--shadow-light);
+    transition: transform 0.3s ease; /* Transición para hover */
+}
+
+.profile-photo:hover {
+    transform: scale(1.05); /* Pequeño zoom al pasar el ratón */
+}
+
+.hero-section h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.hero-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    color: var(--text-medium);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-flex; /* Usar flex para alinear icono y texto */
+    align-items: center;
+    gap: 10px; /* Espacio entre texto y flecha */
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color); /* Usando variable */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--shadow-medium);
+}
+
+.cta-button .fas {
+    font-size: 1em; /* Asegura que el icono tenga un tamaño relativo al texto del botón */
+}
+
+
+/* --- Estilos para la Nueva Sección de Habilidades --- */
+#skills {
+    background-color: var(--bg-light); /* Fondo alterno */
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Columnas responsivas */
+    gap: 30px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.skill-item {
+    background-color: var(--bg-white);
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px var(--shadow-medium);
+}
+
+.skill-item .fas, .skill-item .fab {
+    font-size: 4em; /* Iconos grandes */
+    color: var(--accent-color); /* Color de acento para los iconos de habilidad */
+    margin-bottom: 15px;
+}
+
+.skill-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.skill-item p {
+    font-size: 0.95em;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* --- Estilos para la Sección de Proyectos --- */
+#proyectos {
+    background-color: var(--bg-light); /* Fondo alterno */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.project-item {
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    overflow: hidden; /* Para que la imagen no se salga */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.project-item img {
+    width: 100%;
+    height: 200px; /* Altura fija para miniaturas de proyecto */
+    object-fit: cover; /* Asegura que la imagen cubra el área */
+    display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+.project-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6em;
+    color: var(--primary-color);
+    margin: 20px 20px 10px;
+}
+
+.project-item p {
+    font-size: 0.95em;
+    color: var(--text-light);
+    line-height: 1.5;
+    padding: 0 20px;
+    flex-grow: 1; /* Permite que el párrafo ocupe el espacio restante */
+}
+
+.project-item .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 15px 20px;
+    transition: color 0.3s ease;
+}
+
+.project-item .project-link:hover {
+    color: var(--primary-color);
+}
+
+.project-item .project-link .fas, .project-item .project-link .fab {
+    font-size: 1em;
+}
+
+/* --- Estilos para la Sección de Contacto --- */
+#contacto {
+    background-color: var(--bg-white);
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-info .fas {
+    color: var(--accent-color);
+}
+
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    gap: 25px;
+}
+
+.social-links a {
+    color: var(--primary-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* --- Media Queries para Responsividad (Ajustes Adicionales) --- */
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 100%; /* Ajuste para móvil */
+    }
+
+    .sidebar {
+        width: var(--sidebar-width);
+        height: auto;
+        position: relative;
+        clip-path: none;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+        animation: none;
+        transform: none;
+        opacity: 1;
+    }
+
+    .sidebar ul {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        height: auto;
+    }
+
+    .sidebar li {
+        padding: 10px 5px;
+        border-bottom: none;
+        border-right: 1px solid var(--border-light);
+        flex-grow: 1;
+    }
+
+    .sidebar li:last-child {
+        border-right: none;
+    }
+
+    .sidebar li a {
+        font-size: 16px; /* Más pequeño para móvil */
+        text-align: center;
+        flex-direction: column; /* Apila icono y texto en móvil */
+        gap: 5px;
+    }
+
+    .sidebar li a .fas, .sidebar li a .fab {
+        font-size: 20px; /* Tamaño del icono en móvil */
+    }
+
+    .sidebar ul li:hover {
+        transform: none;
+        background-color: var(--border-light);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 0;
+    }
+
+    .page-section, .hero-section {
+        padding: 50px 20px;
+    }
+
+    .section-content {
+        padding: 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-section h2 {
+        font-size: 1.2em;
+    }
+
+    .hero-section p {
+        font-size: 0.95em;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .skills-grid, .projects-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+
+    .project-item img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-section h2 {
+        font-size: 1em;
+    }
+
+    .sidebar li a {
+        font-size: 14px; /* Más pequeño aún para pantallas muy pequeñas */
+    }
+
+    .sidebar li a .fas, .sidebar li a .fab {
+        font-size: 18px;
+    }
 }
