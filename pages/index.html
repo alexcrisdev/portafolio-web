@@ -3,60 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio web acerca de mi perfil profesional y servicios que brindamos">
+    <meta name="description" content="Portafolio web del perfil profesional y servicios de Alexander Crisóstomo">
     <title>Portafolio Web</title>
+    <link rel="website icon" type="image/png" href="/images/favicon/persona.png">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>Alexander Daniel Crisóstomo Guzmán</h1>
         <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-            </ul>
+            <a href="#inicio" class="nav-link">Inicio</a>
+            <a href="#habilidades-main" class="nav-link">Habilidades</a>
+            <a href="#experiencia-main" class="nav-link">Experiencia</a>
+            <a href="#servicios-main" class="nav-link">Servicios</a>
         </nav>
     </header>
 
-    <main>
-        <section id="inicio">
+    <main role="main">
+        <section class="box active" id="inicio"> 
             <h2>Sobre mí</h2>
-            <img src="#" alt="Foto de Alexander Daniel Crisóstomo Guzmán"/>
+            <img src="https://via.placeholder.com/150" alt="Foto de Alexander Daniel Crisóstomo Guzmán"/> 
             <p>¡Hola! Soy Alexander, desarrollador web apasionado por la tecnología y la innovación digital.</p>
         </section>
 
-        <section id="habilidades">
-            <h2>Habilidades</h2>
-            <div>
-                <a href="#" download>📄 Descargar CV</a>
-            </div>
-
-            <article>
+        <section class="box" id="habilidades-main">
+            <h2>Habilidades</h2> 
+            
+            <section> 
                 <h3>Habilidades blandas</h3>
-                <div><h4>Comunicación efectiva</h4></div>
-                <div><h4>Trabajo en equipo</h4></div>
-                <div><h4>Pensamiento analítico</h4></div>
-                <div><h4>Adaptabilidad</h4></div>
-                <div><h4>Autonomía y proactividad</h4></div>
-                <div><h4>Liderazgo</h4></div>
-            </article>
+                <p><a href="#" download>📄 Descargar CV</a></p> 
+                <ul>
+                    <li>Comunicación efectiva</li>
+                    <li>Trabajo en equipo</li>
+                    <li>Pensamiento analítico</li>
+                    <li>Adaptabilidad</li>
+                    <li>Autonomía y proactividad</li>
+                    <li>Liderazgo</li>
+                </ul>
+            </section>
 
-            <article>
+            <section> 
                 <h3>Herramientas digitales</h3>
-                <div><h4>C++</h4></div>
-                <div><h4>Java</h4></div>
-                <div><h4>HTML & CSS</h4></div>
-                <div><h4>Python</h4></div>
-                <div><h4>SQL</h4></div>
-                <div><h4>Excel</h4></div>
-            </article>
+                <ul>
+                    <li>C++</li>
+                    <li>Java</li>
+                    <li>HTML & CSS</li>
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>Excel</li>
+                </ul>
+            </section>
         </section>
 
-        <section id="experiencia">
+        <section class="box" id="experiencia-main"> 
             <h2>Experiencia</h2>
             <article>
-                <h3>MC Soporte y Servicios S.A.C</h3>
+                <h4>MC Soporte y Servicios S.A.C</h4> 
                 <p>
                     Responsable del análisis y solución de problemas relacionados con los sistemas informáticos, 
                     soporte técnico y verificación de la infraestructura tecnológica de la empresa. 
@@ -65,22 +70,29 @@
             </article>
         </section>
 
-        <section id="servicios">
+        <section class="box" id="servicios-main"> 
             <h2>Servicios</h2>
-            <article>
-                <p>Proporcionamos servicios independientes informáticos. Más información en los brochures.</p>
-            </article>
+            <ul>
+                <li>Soporte técnico informático</li>
+                <li>Instalación de redes</li>
+                <li>Mantenimiento de hardware y software</li>
+                <li>Asesoría tecnológica personalizada</li>
+            </ul>
+            <p>Más información disponible en nuestros brochures.</p>
         </section>
     </main>
 
     <footer>
-        <h2>Contacto</h2>
-        <article>
-            <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <p>Teléfono: +51 979 384 604</p>
-            <p>Correo: tuemail@ejemplo.com</p>
-        </article>        
+        <h2>Contactos</h2>
+        <div class="redes" aria-label="Redes sociales">
+            <a href="#" target="_blank" rel="noopener noreferrer"><img src="/images/favicon/linkedin.png" alt="Icono de LinkedIn"></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"><img src="/images/favicon/github.png" alt="Icono de GitHub"></a>
+        </div>
+        <address>
+            <p>Celular: +51 979 384 604 | Correo: <a href="mailto:alexander.crisostomo.dg@gmail.com">alexander.crisostomo.dg@gmail.com</a></p>
+        </address>
     </footer>
+
+    <script src="/functions/funcionsja.js"></script>
 </body>
 </html>
