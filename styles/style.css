@@ -14,6 +14,15 @@
     --snd-bg-color: #d3d4d4;
     --text-color: #000;
     --main-color: #610707;
+
+    --skills-box-bg: #22252a;
+    --skills-box-text: #f0f0f0;
+    --skills-category-title-color: var(--main-color);
+
+    --tag-bg-color: #3f444c;
+    --tag-text-color: var(--skills-box-text);
+    --tag-hover-bg: #5a6068;
+    --tag-shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 html{
@@ -180,74 +189,130 @@ span {
     box-shadow: 0 0 1.6rem var(--main-color);
 }
 
-/* About Section Code */
-
-.about{
-    display: flex;
-    align-items:  center;
-    justify-content: center;
-    gap: 2rem;
-    background: var(--snd-bg-color);
-}
-
-.about-img img{
-    width: 25vw;
-    border: 2px solid var(--main-color);
-    border-radius: 50%;
-    box-shadow: 0 0 25px var(--main-color);
-    cursor: pointer;
-    transition: 0.4s ease;
-}
-
-.about-img img:hover{
-    box-shadow: 0 0 25px var(--main-color),
-                0 0 35px var(--main-color),
-                0 0 45px var(--main-color);
-}
-
-.heading {
-    font-size: 6rem;
-    text-align: left;
-}
-
-.about-content{
-    padding: 0 4rem;
-}
-
-.about-content h2 {
-    text-align: left;
-    line-height: 1.2;
-}
-
-.about-content h3{
-    font-size: 3rem;
-}
-
-.about-content p{
-    font-size: 1.6rem;
-    margin: 2rem 0 3rem;
-}
-
 /* Sumary section code  */
-
-.summary .experience-box{
-    background: yellow;
+.summary{
     display: flex;
-    justify-self: center;
-    padding: 30px;
-    margin-top: 10rem;
-    width: 50vw;
-    border-radius: 1% ;
-    border: 2px solid var(--main-color);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    background-color: var(--bg-color);
+    padding-top: 12rem;
 }
 
-.summary .details{
-    border: 2px solid black;
-    width: 500px;
+.summary-box{
+    background-color: var(--snd-bg-color);
+    border-radius: 2rem;
+    padding: 3rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+    flex: 1 1 60rem;
+    max-width: 70rem;
+    transition: transform 0.3s, box-shadow 0.3s ease;
+    line-height: 1.6;
 }
 
-.summary .experience-box > p{
-    border: 2px solid black;
+.summary-box:hover{
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+    transform: translateY(-1rem);
+}
+
+.summary h2.heading{
+    font-size: 3.6rem;
+    margin-bottom: 2.5rem;
+    color: var(--main-color);
     text-align: center;
-    margin-left: 10rem;
+}
+
+.experience-item{
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+}
+
+.experience-meta{
+    flex: 0 0 16rem;
+    background-color: var(--bg-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    color: var(--text-color);
+}
+
+.experience-meta h4{
+    font-size: 1.9rem;
+    margin-bottom: 0.8rem;
+    color: var(--main-color);
+    line-height: 1.3;
+}
+
+.experience-meta p{
+    color: var(--text-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.2rem;
+}
+
+.experience-description{
+    flex: 1;
+    min-width: 25rem;
+}
+
+.experience-description p{
+    font-size: 1.6rem;
+    line-height: 1.7;
+}
+
+.skills-box{
+    background-color: var(--snd-bg-color);
+    color: var(--skills-box-text);
+}
+
+.skills-box .heading{
+    color: var(--skills-box-text);
+}
+
+.skill-category{
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+}
+
+.category-title{
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--skills-category-title-color);
+    display: flex;
+    align-items: center;
+}
+
+.category-title i{
+    font-size: 2.8rem;
+    margin-right: 1rem;
+    color: var(--skills-category-title-color);
+}
+
+.skill-tags-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.skill-tag{
+    background-color: var(--tag-bg-color);
+    color: var(--tag-text-color);
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.skill-tag:hover{
+    background-color: var(--tag-hover-bg);
+    transform: translateY(-0.2rem);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
