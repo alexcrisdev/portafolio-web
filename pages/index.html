@@ -4,95 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portafolio web del perfil profesional y servicios de Alexander Crisóstomo">
-    <title>Portafolio Web</title>
+    <title>Alexander Crisóstomo - Portfolio</title>
     <link rel="website icon" type="image/png" href="/images/favicon/persona.png">
     <link rel="stylesheet" href="/styles/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Alexander Daniel Crisóstomo Guzmán</h1>
-        <nav>
-            <a href="#inicio" class="nav-link">Inicio</a>
-            <a href="#habilidades-main" class="nav-link">Habilidades</a>
-            <a href="#experiencia-main" class="nav-link">Experiencia</a>
-            <a href="#servicios-main" class="nav-link">Servicios</a>
+
+    <!-- Header Section Code -->
+
+    <header class="header">
+        <a href="#home" class="logo">Alexander Crisóstomo</a>
+
+        <i class="bx bx-menu" id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home">Inicio</a>
+            <a href="#about">Sobre mi</a>
+            <a href="#summary">Resumen</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#services">Servicios</a>
         </nav>
     </header>
 
-    <main role="main">
-        <section class="box active" id="inicio"> 
-            <h2>Sobre mí</h2>
-            <img src="https://via.placeholder.com/150" alt="Foto de Alexander Daniel Crisóstomo Guzmán"/> 
-            <p>¡Hola! Soy Alexander, desarrollador web apasionado por la tecnología y la innovación digital.</p>
-        </section>
+    <!-- Home Section Code -->
 
-        <section class="box" id="habilidades-main">
-            <h2>Habilidades</h2> 
-            
-            <section> 
-                <h3>Habilidades blandas</h3>
-                <p><a href="#" download>📄 Descargar CV</a></p> 
-                <ul>
-                    <li>Comunicación efectiva</li>
-                    <li>Trabajo en equipo</li>
-                    <li>Pensamiento analítico</li>
-                    <li>Adaptabilidad</li>
-                    <li>Autonomía y proactividad</li>
-                    <li>Liderazgo</li>
-                </ul>
-            </section>
-
-            <section> 
-                <h3>Herramientas digitales</h3>
-                <ul>
-                    <li>C++</li>
-                    <li>Java</li>
-                    <li>HTML & CSS</li>
-                    <li>Python</li>
-                    <li>SQL</li>
-                    <li>Excel</li>
-                </ul>
-            </section>
-        </section>
-
-        <section class="box" id="experiencia-main"> 
-            <h2>Experiencia</h2>
-            <article>
-                <h4>MC Soporte y Servicios S.A.C</h4> 
-                <p>
-                    Responsable del análisis y solución de problemas relacionados con los sistemas informáticos, 
-                    soporte técnico y verificación de la infraestructura tecnológica de la empresa. 
-                    Encargado de la implementación de redes, así como del mantenimiento de software y hardware.
-                </p>
-            </article>
-        </section>
-
-        <section class="box" id="servicios-main"> 
-            <h2>Servicios</h2>
-            <ul>
-                <li>Soporte técnico informático</li>
-                <li>Instalación de redes</li>
-                <li>Mantenimiento de hardware y software</li>
-                <li>Asesoría tecnológica personalizada</li>
-            </ul>
-            <p>Más información disponible en nuestros brochures.</p>
-        </section>
-    </main>
-
-    <footer>
-        <h2>Contactos</h2>
-        <div class="redes" aria-label="Redes sociales">
-            <a href="#" target="_blank" rel="noopener noreferrer"><img src="/images/favicon/linkedin.png" alt="Icono de LinkedIn"></a>
-            <a href="#" target="_blank" rel="noopener noreferrer"><img src="/images/favicon/github.png" alt="Icono de GitHub"></a>
+    <section class="home" id="home">
+        <div class="home-img">
+            <img src="/images/FOTO_PERSONAL.png" alt="Foto de Alexander Crisóstomo">
         </div>
-        <address>
-            <p>Celular: +51 979 384 604 | Correo: <a href="mailto:alexander.crisostomo.dg@gmail.com">alexander.crisostomo.dg@gmail.com</a></p>
-        </address>
-    </footer>
 
-    <script src="/functions/funcionsja.js"></script>
+        <div class="home-content">
+            <h3>Hola, me llamo</h3>
+            <h1>Alexander Crisóstomo</h1>
+            <h3>y  soy un <span class="multiple-text">Web Dev Junior</span></h3>
+            <p> Desarrollador web apasionado por la tecnología y la innovación digital.</p>
+
+            <div class="social-media">
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                <a href=""><i class='bx bxl-github'></i></a>
+            </div>
+            <a href="#" class="btn">Descargar CV</a>
+        </div>
+    </section>
+  
+    <!-- About Section Code -->
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2 class="heading">Sobre <span>mi</span></h2>
+            <h3>Soy un <span>Backend Developer Junior</span></h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum facilis, reprehenderit nihil adipisci a sit fugit unde quam, rerum alias mollitia quibusdam inventore porro voluptatem dignissimos nulla dolorem molestias necessitatibus?</p>
+            <a href="#" class="btn">Leer Más</a>
+        </div>
+
+        <div class="about-img">
+            <img src="/images/FOTO PERSONAL TWO.png" alt="Segunda foto Alexander Crisóstomo">
+        </div>
+    </section>
+
+    <!-- Summary Section  -->
+
+    <section class="summary" id="summary">
+        <h2 class="heading"><span>Experiencia</span></h2>
+        <div class="experience-box">
+            <div class="details">
+                <h4>Analista - Soporte técnico y sistemas</h4>
+                <p>Lurigancho</p>
+                <p>Lima, PE</p>
+            </div>
+            <p>Trabajé en la empresa MC Soportes y Servicios S.A.C como Responsable del análisis y solución de problemas relacionados con los sistemas informáticos, soporte técnico y verificación de la infraestructura tecnológica de la empresa. 
+Encargado de la implementación de redes, así como del mantenimiento de software y hardware.</p>
+        </div>
+    </section>
+
+
 </body>
 </html>

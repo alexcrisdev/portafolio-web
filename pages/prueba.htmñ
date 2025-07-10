@@ -1,0 +1,84 @@
+    <header>
+
+        <div id="encabezado">
+            <h1>Alexander Daniel Crisóstomo Guzmán</h1>
+            <p>Junior Dev Backend</p>
+        </div>
+        
+        <nav>
+            <a href="#inicio" class="nav-link">Sobre mi</a>
+            <a href="#habilidades-main" class="nav-link">Habilidades</a>
+            <a href="#experiencia-main" class="nav-link">Experiencia</a>
+            <a href="#servicios-main" class="nav-link">Servicios</a>
+        </nav>
+        <div class="redes" aria-label="Redes sociales">
+            <a href="#" target="_blank" rel="noopener noreferrer"><img src="/images/favicon/linkedin.png" alt="Icono de LinkedIn"></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"><img src="/images/favicon/github.png" alt="Icono de GitHub"></a>
+        </div>
+        <address>
+            <p>Celular: +51 979 384 604 | Correo: <a href="mailto:alexander.crisostomo.dg@gmail.com">alexander.crisostomo.dg@gmail.com</a></p>
+        </address>
+    </header>
+ 
+    <main role="main">
+        <section class="box" id="inicio"> 
+            <h2>Sobre mi</h2>
+            <div id="image-container">
+                <!--<img src="/images/FOTO PERSONAL.JPG" alt="Foto de Alexander Daniel Crisóstomo Guzmán"/>-->
+            </div>
+            <p>¡Hola! Soy Alexander, desarrollador web apasionado por la tecnología y la innovación digital.</p>
+        </section>
+
+        <section class="box" id="habilidades-main">
+
+            <h2>Habilidades</h2> 
+            <p><a href="#" download>📄 Descargar CV</a></p>
+            
+            <section id="soft-skills"> 
+                <h3>Habilidades blandas</h3>                 
+                <ul>
+                    <li>Comunicación efectiva</li>
+                    <li>Trabajo en equipo</li>
+                    <li>Pensamiento analítico</li>
+                    <li>Adaptabilidad</li>
+                    <li>Autonomía y proactividad</li>
+                    <li>Liderazgo</li>
+                </ul>
+            </section>
+
+            <section id="digital-skills"> 
+                <h3>Herramientas digitales</h3>
+                <ul>
+                    <li>C++</li>
+                    <li>Java</li>
+                    <li>HTML & CSS</li>
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>Excel</li>
+                </ul>
+            </section>
+        </section>
+
+        <section class="box" id="experiencia-main"> 
+            <h2>Experiencia</h2>
+            <article>
+                <h4>MC Soporte y Servicios S.A.C</h4> 
+                <p>
+                    Responsable del análisis y solución de problemas relacionados con los sistemas informáticos, 
+                    soporte técnico y verificación de la infraestructura tecnológica de la empresa. 
+                    Encargado de la implementación de redes, así como del mantenimiento de software y hardware.
+                </p>
+            </article>
+        </section>
+
+        <section class="box" id="servicios-main"> 
+            <h2>Servicios</h2>
+            <ul>
+                <li>Soporte técnico informático</li>
+                <li>Instalación de redes</li>
+                <li>Mantenimiento de hardware y software</li>
+                <li>Asesoría tecnológica personalizada</li>
+            </ul>
+            <p>Más información disponible en nuestros brochures.</p>
+        </section>
+    </main>
